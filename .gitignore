@@ -317,4 +317,6 @@ pyrightconfig.json
 .svelte-kit/
 package
 
+.vscode/
+
 # End of https://www.toptal.com/developers/gitignore/api/python,node,svelte

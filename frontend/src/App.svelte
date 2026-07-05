@@ -1,5 +1,6 @@
 <script>
   import { onMount, onDestroy } from 'svelte'
+  import { fade, fly } from 'svelte/transition'
   import * as api from './lib/api.js'
 
   let lists = []
@@ -193,8 +194,14 @@ $: percent = total ? Math.round((completed / total) * 100) : 0
     {/if}
   </main>
     {#if confirmModal}
-      <div class="modal-overlay" role="dialog" aria-modal="true">
-        <div class="modal">
+      <div
+        class="modal-overlay"
+        role="dialog"
+        aria-modal="true"
+        in:fade={{ duration: 700 }}
+        out:fade={{ duration: 700 }}
+      >
+        <div class="modal" in:fly={{ y: 16, duration: 420 }} out:fly={{ y: 16, duration: 320 }}>
           <p>정말 할 일 '{modalTarget.title}'을 지울까요?</p>
           <div class="modal-actions">
             <button class="btn-cancel" on:click={cancelDelete}>취소</button>
@@ -329,7 +336,7 @@ $: percent = total ? Math.round((completed / total) * 100) : 0
 
   .stats-row { width: 100%; display:flex; justify-content:center }
   .stats-card {
-    width: 100%; max-width: 820px; background: rgba(255,255,255,0.02); padding: 0.6rem 0.75rem; border-radius: 10px; border:1px solid rgba(255,255,255,0.03);
+    width: 100%; max-width: 820px; background: rgba(255,255,255,0.02); padding: 0.6rem 0.75rem; border-radius: 10px; border:1px solid rgba(255,255,255,0.03); margin-top: 2.5rem;
   }
   .stats-text { color: var(--muted); font-size: 0.95rem }
   .progress-track { height: 6px; background: rgba(255,255,255,0.03); border-radius: 6px; margin-top: 0.5rem; overflow:hidden }
@@ -603,5 +610,15 @@ $: percent = total ? Math.round((completed / total) * 100) : 0
 
   .btn-cancel { background: rgba(255,255,255,0.04); color: var(--text) }
   .btn-confirm { background: rgba(239,68,68,0.12); color: #fecaca }
+
+  @media (max-width: 768px) {
+    .lists-section {
+      width: 100%;
+    }
+
+    .stats-card {
+      margin-top: 2.5rem;
+    }
+  }
 
 </style>

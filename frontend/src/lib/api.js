@@ -1,7 +1,10 @@
 const BASE = import.meta.env.VITE_API_URL;
 
 async function request(path, options = {}) {
-  const res = await fetch(`${BASE}${path}`, {
+  // BASE 주소 끝에 /가 있다면 제거하여 중복 슬래시(//)를 방지합니다.
+  const baseUrl = BASE.endsWith('/') ? BASE.slice(0, -1) : BASE;
+
+  const res = await fetch(`${baseUrl}${path}`, {
     headers: { 'Content-Type': 'application/json' },
     ...options,
   })

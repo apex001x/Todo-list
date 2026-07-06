@@ -11,7 +11,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://todo-list-iohl.onrender.com"
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )

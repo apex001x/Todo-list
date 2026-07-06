@@ -37,6 +37,12 @@ uvicorn main:app --reload
 
 ## 📸 Screenshot
 
+### PC
+
 <img width="2560" height="1293" alt="image" src="https://github.com/user-attachments/assets/55f84515-3308-46cf-b367-835629f5606c" />
+
+### Mobile
+
+<img width="431" height="936" alt="image" src="https://github.com/user-attachments/assets/507879ff-ddfe-4c68-b33e-d78ebdc608a4" />
 
 <sub>By Apex, 2026</sub>

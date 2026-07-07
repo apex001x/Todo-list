@@ -18,6 +18,7 @@ Todo List website for people who often forget their todo thing
 - Control if its done or not by bool type
 - Mobile React website to use well and easily
 - Show modal when you try to delete the todo list
+- Disable `/docs`, `redoc` when publish by `ENV_MODE` variable
 
 ## 🚀 Execute
 
@@ -43,9 +44,9 @@ uvicorn main:app --reload
 
 <img width="2560" height="1293" alt="image" src="https://github.com/user-attachments/assets/55f84515-3308-46cf-b367-835629f5606c" />
 
-### Mobile
+### Mobile (iphone 14 pro max)
 
-<img width="431" height="936" alt="image" src="https://github.com/user-attachments/assets/507879ff-ddfe-4c68-b33e-d78ebdc608a4" />
+<img width="472" height="512" alt="ㅇㅇ" src="https://github.com/user-attachments/assets/515e598c-fb40-4853-876e-970a31f74610" />
 
 <sub>By Apex, 2026</sub>
 <sub>Published by Render</sub>

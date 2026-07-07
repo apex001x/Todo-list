@@ -9,9 +9,9 @@ load_dotenv()
 
 ENV_MODE = os.getenv("ENV_MODE", "development")
 
-if ENV_MODE == "development":
+if ENV_MODE == "production":
     app = FastAPI(docs_url=None, redoc_url=None)
-else: 
+else:
     app = FastAPI()
 
 app.add_middleware(

@@ -7,7 +7,12 @@ import os
 
 load_dotenv()
 
-app = FastAPI()
+ENV_MODE = os.getenv("ENV_MODE", "development")
+
+if ENV_MODE == "development":
+    app = FastAPI(docs_url=None, redoc_url=None)
+else: 
+    app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
